@@ -1,21 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import './style.css'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  <div>
+
+  <div className="container">
+    <h2>API Project: File Metadata Microservice</h2>
+    <h3>User Stories:</h3>
+    <ol>
+      <li>I can submit a form object that includes a file upload.</li>
+      <li>When I submit something, I will receive the file name, and size in bytes within the JSON response.</li>
+    </ol>
+
+    <h3>Usage:</h3>
+    <p>
+      Please Upload a File ...
+    </p>
+    <div className="view">
+      <h4 id="output"></h4>
+      <form enctype="multipart/form-data" method="POST" action="https://flask-file-metadata.andrew-horn-portfolio.life/api/fileanalyze/">
+        <input id="inputfield" type="file" name="upfile"/>
+        <input id="button" type="submit" value="Upload"/>
+      </form>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </div>
+  <div class="footer">
+    <p>
+      Created by Andrew Horn
+    </p>
+  </div>
+</div>
 )
 
 export default IndexPage
